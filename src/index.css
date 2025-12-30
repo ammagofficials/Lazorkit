@@ -1,0 +1,74 @@
+
+@import "tailwindcss";
+
+@theme {
+  /* Premium Dark Theme Palette */
+  --color-background: #09090B; /* zinc-950 */
+  --color-surface: rgba(24, 24, 27, 0.5); /* zinc-900 with opacity */
+  --color-border: rgba(255, 255, 255, 0.1);
+  
+  --color-text-primary: #F4F4F5; /* zinc-100 */
+  --color-text-secondary: #A1A1AA; /* zinc-400 */
+  
+  --color-accent-gradient-start: #4F46E5; /* indigo-600 */
+  --color-accent-gradient-end: #7C3AED; /* violet-600 */
+  
+  /* Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  @apply bg-zinc-900/50 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
+
+.glass-card {
+  @apply bg-zinc-800/40 backdrop-blur-md border border-white/5;
+}
+
+/* Button Variants */
+.btn-connect {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-zinc-950 font-semibold rounded-xl hover:bg-zinc-200 transition-all duration-200 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer disabled:opacity-50;
+}
+
+.btn-action {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-medium rounded-xl hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all duration-300 border border-white/10 cursor-pointer disabled:opacity-50;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 text-zinc-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors cursor-pointer;
+}
+
+/* Terminal Utilities */
+.terminal-window {
+  @apply bg-black/80 border border-white/10 rounded-xl font-mono text-xs p-4 shadow-inner;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
